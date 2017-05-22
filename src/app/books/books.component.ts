@@ -22,15 +22,15 @@ export class BooksComponent implements OnInit {
   offer() {
     const books = this.books.filter(e => e.selected);
     const total = books.reduce((a, b) => a + b.price, 0);
-    let isbns = books.reduce((a, b) => a + `${b.isbn},`, "");
+    let isbns = books.reduce((a, b) => a + `${b.isbn},`, '');
     isbns = isbns.slice(0, isbns.length - 1);
     this.bookService.offer(isbns).subscribe(res => {
-      let result = []
+      const result = [];
       result.push(total * ((100 - res.offers[0].value) / 100));
       result.push(total - res.offers[1].value);
       result.push(total - res.offers[2].value * Math.floor(total / res.offers[2].sliceValue));
       this.cost = Math.min.apply(Math, result);
-    })
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../models/book.model';
 import { Router } from '@angular/router';
 
@@ -17,10 +17,8 @@ export class BookComponent implements OnInit {
   ngOnInit() {
   }
 
-  check(){
+  check() {
     this.checked.next(this.book);
   }
-
-
 
 }
