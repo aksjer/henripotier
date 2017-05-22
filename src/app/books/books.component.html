@@ -1,0 +1,5 @@
+<button (click)="offer()">Calculate</button>
+<div>{{cost}}</div>
+<div *ngFor="let book of books">
+  <app-book [book]="book"></app-book>
+</div>

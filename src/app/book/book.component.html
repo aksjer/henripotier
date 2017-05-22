@@ -1,0 +1,17 @@
+<div class="flex-container">
+  <input type="checkbox" [(ngModel)]="book.selected">
+  <div>
+    <img src="{{book.cover}}" height="100" width="100">
+  </div>
+  <div>
+    <h3>
+      {{book?.title}} - {{book?.price | currency : 'eur' : true}}
+    </h3>
+    <div>
+      (isbn) : {{book?.isbn}}
+    </div>
+  </div>
+  <!--<div *ngFor="let syn of book.synopsis">
+    <div class="synopsis">{{syn}}</div>
+  </div>-->
+</div>
